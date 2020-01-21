@@ -9,6 +9,10 @@ const Container = styled.div`
 
     background-color: ${props => props.theme.postcolor};
     border-radius: 0.3rem
+
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 const PostTitle = styled.h1`
@@ -36,8 +40,13 @@ const PostDate = styled.h3`
 `;
 
 export default function Post({title, previewtext, date}) {
+
+    function clicked() {
+        console.log("clicked")
+    }
+
     return (
-        <Container>
+        <Container onClick={clicked}>
             <PostTitle>{title}</PostTitle>
             <PostDescription>{previewtext}</PostDescription>
             <PostDate>Posted {date}</PostDate>
